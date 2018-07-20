@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="www.thymeleaf.org" xmlns:sec="www.thymeleaf.org/extras/spring-security">
+<head>
+    <meta charset="UTF-8"/>
+    <title>Title</title>
+</head>
+<body>
+
+    <th:block th:each="pet:${user.pets}">
+        <li><div th:if="${pet.img} != null">
+            <img th:src="${pet.img}"/>
+            <hr/>
+        </div></li>
+        <li><h3 th:text="${pet.name}"></h3></li>
+        <li><h4 th:text="${pet.date}"></h4></li>
+        <li><h4 th:text="${pet.description}"></h4></li>
+    </th:block>
+
+
+</body>
+</html>
